@@ -30,6 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   //bg-[#1C1F2E]
+  //#0E78F9"
   return (
     <ClerkProvider
       appearance={{
