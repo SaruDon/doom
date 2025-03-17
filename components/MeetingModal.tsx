@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { Children, ReactNode } from "react";
 import {
   Dialog,
   DialogContent,
@@ -26,6 +26,7 @@ const MeetingModal = ({
   isOpen,
   onClose,
   title,
+  children,
   className,
   buttonText,
   handleClick,
@@ -46,9 +47,10 @@ const MeetingModal = ({
               )}
             </div>
           </DialogHeader>
+          {children}
           <Button
             className="bg-[#0E78F9] focus-visible:ring-0
-          focus-visible:ring-offset-0"
+          focus-visible:ring-offset-0 cursor-pointer"
             onClick={handleClick}
           >
             {buttonIcon && (
