@@ -5,12 +5,12 @@ import MeetingSetup from "@/components/MeetingSetup";
 import { useGetCallById } from "@/hooks/useGetCallByIds";
 import { useUser } from "@clerk/nextjs";
 import { StreamCall, StreamTheme } from "@stream-io/video-react-sdk";
+import { useParams } from "next/navigation";
 import React, { useState } from "react";
 
-const Meeting = ({ params }: { params: { id: string | Promise<string> } }) => {
+const Meeting = () => {
   // Unwrap the id if it's a Promise
-  const id = params.id instanceof Promise ? React.use(params.id) : params.id;
-
+  const { id } = useParams<{ id: string }>();
   const { user, isLoaded } = useUser();
   const [isSetupComplete, setIsSetupComplete] = useState(false);
 
